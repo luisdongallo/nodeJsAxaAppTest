@@ -1,0 +1,28 @@
+<% include partials/header %>
+    <h1>Add Contacts</h1>
+    <form method="POST" action="/contacts/add">
+        <label>First Name</label><br>
+        <input type = "text" name = "firstName">
+        <br>
+        <label>Last Name</label><br>
+        <input type = "text" name = "lastName">
+        <br>
+        <label>Contact Type</label><br>
+        <input type = "text" name = "type">
+        <br><br>
+        <input type = "submit" value = "Submit">
+
+    </form>
+    <h1><%= title %></h1> 
+<ul>
+    <% contacts.forEach(function(contact){ %>
+        <li>
+            <%= contact.id %>
+            <%= contact.firstName %>
+            <%= contact.lastName %>
+            <%= contact.type %>           
+        </li>
+    <% }) %>
+</ul>
+<% include partials/footer %>
+
